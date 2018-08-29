@@ -13,13 +13,22 @@ scene.add(light);
 var pointLight = new THREE.PointLight(0xffffff, 0.5);
 scene.add(pointLight);
 
-var geometry = new THREE.Geometry();
-geometry.vertices.push(
-    new THREE.Vector3(-10, 10, 0),
-    new THREE.Vector3(-10, -10, 0),
-    new THREE.Vector3(10, -10, 0)
-);
-geometry.faces.push( new THREE.Face3(0, 1, 2));
+// var geometry = new THREE.Geometry();
+// geometry.vertices.push(
+//     new THREE.Vector3(-10, 10, 0),
+//     new THREE.Vector3(-10, -10, 0),
+//     new THREE.Vector3(10, -10, 0)
+// );
+// geometry.faces.push( new THREE.Face3(0, 1, 2));
+
+var geometry = new THREE.BufferGeometry();
+var vertices = new Float32Array([
+    -10.0, -10.0, 0.0,
+    10.0, -10.0, 0.0,
+    10.0, 10.0, 0.0
+
+]);
+geometry.addAttribute('position', new THREE.BufferAttribute(vertices, 3));
 
 var material = new THREE.MeshLambertMaterial( {color: 0xf3ffe2} );
 var mesh = new THREE.Mesh(geometry, material);
