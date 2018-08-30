@@ -1,5 +1,5 @@
 var renderer = new THREE.WebGLRenderer({canvas: document.getElementById('myCanvas'), antialias: true});
-renderer.setClearColor(0x00ff00);
+renderer.setClearColor(0x000000);
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 
@@ -30,7 +30,7 @@ var vertices = new Float32Array([
 ]);
 geometry.addAttribute('position', new THREE.BufferAttribute(vertices, 3));
 
-var material = new THREE.MeshLambertMaterial( {color: 0xf3ffe2} );
+var material = new THREE.MeshLambertMaterial( {color: 0x00ff00} );
 var mesh = new THREE.Mesh(geometry, material);
 mesh.position.set(0,0,-1000);
 
